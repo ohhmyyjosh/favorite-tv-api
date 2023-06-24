@@ -9,13 +9,15 @@ This project utilizes the TV Maze API to allow users to search for TV shows and 
 
 1. Clone the repository: https://github.com/ohhmyyjosh/favorite-tv-api.git
 
-2. Options:
+2. Install Node.js onto your system: https://nodejs.org/en
+
+3. Options:
     1. Download MongoDB Community Server: https://www.mongodb.com/try/download/community to host the database locally on your system.
     2. Create an online MongoDB Atlas account. Create a new cluster, create a new database.
 
-3. Update the connection string in "credentials.js" to connect to your database, whether local or remote.
+4. Update the connection string in "credentials.js" to connect to your database, whether local or remote.
 
-4. With a terminal open in the project directory, execute this command:
+5. With a terminal open in the project directory, execute this command:
 `npm install`
 
 ## How to run the app
