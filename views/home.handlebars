@@ -1,0 +1,29 @@
+{{#if user}}
+    <div style="display: flex; align-items: center;">
+        <h1 style="margin-right: 10px;">Welcome, {{email}}!</h1>
+        <form action="/logout" method="get">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+    <form action="/search" method="get">
+        <input type="text" name="searchTerm" placeholder="Search Shows...">
+        <input type="submit" value="Search">
+    </form>
+    <h2>Your Favorites</h2>
+    {{#if favorites}}
+        <ul>
+            {{#each favorites}}
+                <li>
+                    <h2><a href="{{url}}" target="_blank">{{name}} ({{years}})</a></h2>
+                    <p>{{{summary}}}</p>
+                    <img src="{{image.medium}}" alt="{{name}}">
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>You don't have any favorites. Maybe you should add some!</p>
+    {{/if}}
+{{else}}
+    <h1>Please log in to view this page</h1>
+    <p><a href="/login">Login</a> or <a href="/register">Register</a></p>
+{{/if}}

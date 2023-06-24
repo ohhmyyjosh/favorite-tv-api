@@ -1,0 +1,14 @@
+<h1>Search Results</h1>
+<ul>
+  {{#each results}}
+    <li>
+      <h2><a href="{{this.show.url}}" target="_blank">{{this.show.name}} ({{this.show.years}})</a></h2>
+      <p>{{{this.show.summary}}}</p>
+      <img src="{{this.show.image.medium}}" alt="{{this.show.name}}">
+      <form action="/favorites/{{#if isFavorite}}remove{{else}}add{{/if}}/{{this.show.id}}" method="post">
+        <input type="hidden" name="searchTerm" value="{{../searchTerm}}">
+        <button type="submit">{{#if isFavorite}}Remove from Favorites{{else}}Add to Favorites{{/if}}</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>
